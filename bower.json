@@ -1,0 +1,14 @@
+{
+  "name": "cable-manager",
+  "description": "A lightweight library for generating and managing patch cables (or any set of lines and coordinates)",
+  "version": "1.0.0",
+  "main": "CableManager.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.md",
+    "tests/"
+  ],
+  "authors": [
+      { "name": "Scott Cazan", "email": "scottcazan@gmail.com"," homepage": "http://github.com/scazan" }
+  ]
+}
