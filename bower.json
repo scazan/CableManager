@@ -1,7 +1,7 @@
 {
   "name": "cable-manager",
   "description": "A lightweight library for generating and managing patch cables (or any set of lines and coordinates)",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "CableManager.js",
   "ignore": [
     ".jshintrc",
