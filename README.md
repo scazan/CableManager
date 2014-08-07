@@ -33,3 +33,5 @@ To use, import via require first then:
     cableManager.updateCoordinates(patchCable, {
       to: {x: 20, y: 50},
     });
+
+More to come!
