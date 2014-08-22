@@ -24,14 +24,17 @@ To use, import via require first then:
     });
     
     // tie the movement of your objects to this method to update locations
-    cableManager.updateCoordinates(patchCable, {
+    patchCable.updateCoordinates({
       from: {x: 120, y: 530},
       to: {x: 20, y: 50},
     });
     
     // OR since you are likely only moving one, pass just the updated coordinates
-    cableManager.updateCoordinates(patchCable, {
+    patchCable.updateCoordinates({
       to: {x: 20, y: 50},
     });
+    
+    // To remove a cable and its associated DOM elements
+    patchCable.remove();
 
 More to come!
