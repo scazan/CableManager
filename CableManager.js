@@ -52,30 +52,40 @@ function() {
 			newPath.className += 'connection';
 			this.parentEl.appendChild(newPath);
 
-			var newConnection = {
+			var newConnection = new Cable({
 				el: newPath,
 				id: this.connections.length,
 				from: coords.from,
 				to: coords.to,
-			};
+			});
 
-			this.updateCoordinates(newConnection, coords);
+			newConnection.updateCoordinates(coords);
 			this.connections.push(newConnection);
 
 			return newConnection;
 		},
-		updateCoordinates: function(connection, coords) {
-			var pathEl = connection.el;
+	};
+
+	var Cable = function(options) {
+		this.el = options.el;
+		this.id = options.id;
+		this.from = options.from;
+		this.to = options.to;
+	};
+
+	Cable.prototype = {
+		updateCoordinates: function(coords) {
+			var pathEl = this.el;
 			if(coords.from) {
-				connection.from = coords.from;
+				this.from = coords.from;
 			}
 			if(coords.to) {
-				connection.to = coords.to;
+				this.to = coords.to;
 			}
-				var toX = connection.to.x - connection.from.x,
-					toY = connection.to.y - connection.from.y;
+				var toX = this.to.x - this.from.x,
+					toY = this.to.y - this.from.y;
 
-			pathEl.setAttribute('d', 'M ' + connection.from.x + ',' + connection.from.y + ' l ' + toX + ',' + toY);
+			pathEl.setAttribute('d', 'M ' + this.from.x + ',' + this.from.y + ' l ' + toX + ',' + toY);
 		},
 	};
 
