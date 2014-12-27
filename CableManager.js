@@ -17,7 +17,8 @@ function() {
 		}
 		else {
 			var parentEl = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-			parentEl.classList.add('patchCableParent');
+			// Temporary removal while debugging some issues
+			//parentEl.classList.add('patchCableParent');
 
 			this.parentEl = parentEl;
 			this.width = "100%";
