@@ -89,7 +89,7 @@ function() {
 			pathEl.setAttribute('d', 'M ' + this.from.x + ',' + this.from.y + ' l ' + toX + ',' + toY);
 		},
 		remove: function() {
-			this.el.parentNode.removeChild(this.el);
+			this.el && this.el.parentNode.removeChild(this.el);
 			this.id = this.from = this.to = this.el = undefined;
 		},
 	};
