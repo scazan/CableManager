@@ -65,6 +65,19 @@ function() {
 
 			return newConnection;
 		},
+		removeConnection: function removeConnection(id) {
+			var indexOfID = undefined,
+				foundID = false;
+
+			for(var i=this.connections.length-1; i>=0 && foundID == false; i--) {
+				if(this.connections[i].id == id) {
+					foundID = true;
+					indexOfID = i;
+				}
+			}
+
+			this.connections.splice(indexOfID, 1);
+		},
 	};
 
 	var Cable = function(options) {
@@ -90,7 +103,9 @@ function() {
 		},
 		remove: function() {
 			this.el && this.el.parentNode.removeChild(this.el);
-			this.id = this.from = this.to = this.el = undefined;
+			this.from = this.to = this.el = undefined;
+
+			return this.id;
 		},
 	};
 
